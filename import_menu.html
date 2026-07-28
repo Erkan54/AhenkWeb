@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Eksik Menü İçe Aktar</title>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <h1>Eksik Ürünler Yükleniyor... Lütfen bekleyin.</h1>
+    <h2 id="status" style="color: blue;">Yükleniyor...</h2>
+    <ul id="log"></ul>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBojjcFFIOfzgzDZCMb5glxzJENtpYCkgg",
+            authDomain: "ahenkkafe-3938a.firebaseapp.com",
+            projectId: "ahenkkafe-3938a",
+            storageBucket: "ahenkkafe-3938a.firebasestorage.app",
+            messagingSenderId: "633075040495",
+            appId: "1:633075040495:web:08e9deec12a3502b62db1a",
+            measurementId: "G-7ZWXGMTTXT"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        const menuData = [
+            { name: "Bitki Çayları", price: "150,00 ₺", category: "sicak-icecekler" },
+            { name: "Menengiç Kahvesi", price: "100,00 ₺", category: "sicak-icecekler" },
+            { name: "Ice Chai Tea Latte", price: "140,00 ₺", category: "soguk-kahveler" },
+            { name: "Limonata", price: "140,00 ₺", category: "soguk-icecekler" },
+            { name: "Elmalı Limonata", price: "160,00 ₺", category: "soguk-icecekler" },
+            { name: "Affogato", price: "150,00 ₺", category: "soguk-icecekler" },
+            { name: "Snickers", price: "260,00 ₺", category: "tatlilar" }
+        ];
+
+        async function uploadMenu() {
+            const logEl = document.getElementById('log');
+            const statusEl = document.getElementById('status');
+            let count = 0;
+
+            for (const item of menuData) {
+                try {
+                    await db.collection("menu").add({
+                        name: item.name,
+                        description: "",
+                        price: item.price,
+                        category: item.category,
+                        active: true,
+                        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+                    
+                    const li = document.createElement('li');
+                    li.textContent = `${item.name} eklendi.`;
+                    li.style.color = "green";
+                    logEl.appendChild(li);
+                    count++;
+                } catch (error) {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.name} EKLENEMEDİ! Hata: ${error.message}`;
+                    li.style.color = "red";
+                    logEl.appendChild(li);
+                }
+            }
+
+            statusEl.textContent = `BİTTİ! Kalan ${count} ürün başarıyla yüklendi. Artık bu sekmeyi kapatabilirsiniz.`;
+            statusEl.style.color = "green";
+        }
+
+        uploadMenu();
+    </script>
+</body>
+</html>

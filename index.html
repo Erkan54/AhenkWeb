@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahenk Kafe | Doğal · Taze · Lezzetli - Serdivan/Sakarya</title>
+    <meta name="description"
+        content="Ahenk Kafe - Serdivan'ın en nezih kafesi. Doğal, taze ve lezzetli kahveler, tatlılar ve sandviçler. Ailecek gelebileceğiniz huzurlu bir mekan.">
+    <meta name="keywords" content="Ahenk Kafe, Serdivan kafe, Sakarya kafe, kahve, tatlı, sandviç, aile kafesi">
+    <meta property="og:title" content="Ahenk Kafe | Doğal · Taze · Lezzetli">
+    <meta property="og:description"
+        content="Serdivan'ın en nezih kafesi. Doğal, taze ve lezzetli ürünlerle sizleri ağırlıyoruz.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/animations.css?v=2">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="leaf-spinner">
+                <svg viewBox="0 0 60 60" class="leaf-svg">
+                    <path d="M30 5 C20 15, 10 25, 10 35 C10 50, 20 55, 30 55 C40 55, 50 50, 50 35 C50 25, 40 15, 30 5Z"
+                        fill="none" stroke="currentColor" stroke-width="2" />
+                    <path d="M30 15 L30 45 M20 25 L30 35 M40 25 L30 35" fill="none" stroke="currentColor"
+                        stroke-width="1.5" />
+                </svg>
+            </div>
+            <p class="preloader-text">Ahenk Kafe</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-text">AHENK</span>
+                <span class="logo-sub">kafe</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">Ana Sayfa</a></li>
+                <li><a href="#about" class="nav-link">Hakkımızda</a></li>
+                <li><a href="#gallery" class="nav-link">Fotoğraflar</a></li>
+                <li><a href="#menu" class="nav-link">Menü</a></li>
+                <li><a href="#reviews" class="nav-link">Yorumlar</a></li>
+                <li><a href="#contact" class="nav-link">İletişim</a></li>
+                <li><a href="admin.html" class="nav-link admin-link">Yönetici</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="floating-leaves">
+            <div class="leaf leaf-1"></div>
+            <div class="leaf leaf-2"></div>
+            <div class="leaf leaf-3"></div>
+            <div class="leaf leaf-4"></div>
+            <div class="leaf leaf-5"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line title-line-1">AHENK</span>
+                <span class="title-line title-line-2">kafe</span>
+            </h1>
+            <p class="hero-motto">“Ahenk ile gününüz biraz daha güzel”</p>
+            <div class="hero-tagline">
+                <span class="tagline-dot">●</span>
+                <span>Doğal</span>
+                <span class="tagline-dot">●</span>
+                <span>Taze</span>
+                <span class="tagline-dot">●</span>
+                <span>Lezzetli</span>
+                <span class="tagline-dot">●</span>
+            </div>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Menümüzü Keşfedin</a>
+                <a href="#contact" class="btn btn-outline">Bizi Ziyaret Edin</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-icon">⭐</span>
+                    <span class="stat-value">5.0</span>
+                    <span class="stat-label">Google Puanı</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-icon">💬</span>
+                    <span class="stat-value">27+</span>
+                    <span class="stat-label">Mutlu Yorum</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-icon">🍰</span>
+                    <span class="stat-value">50+</span>
+                    <span class="stat-label">Çeşit Ürün</span>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator">
+            <span class="scroll-text">Aşağı Kaydır</span>
+            <div class="scroll-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12l7 7 7-7" />
+                </svg>
+            </div>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Biz Kimiz?</span>
+                <h2 class="section-title">Lezzet ve Huzurun Buluşma Noktası</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-card" data-aos="fade-up">
+                    <div class="about-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M8 36h32M12 36V20c0-2 1-4 4-4h16c3 0 4 2 4 4v16M20 16v-4c0-2 2-4 4-4s4 2 4 4v4" />
+                            <circle cx="24" cy="26" r="4" />
+                        </svg>
+                    </div>
+                    <h3>Doğal Ürünler</h3>
+                    <p>Tüm ürünlerimiz özenle seçilmiş, doğal ve kaliteli malzemelerle hazırlanır. Şekersiz
+                        seçeneklerimiz de mevcuttur.</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-delay="200">
+                    <div class="about-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M24 4C14 4 6 12 6 22c0 12 18 22 18 22s18-10 18-22C42 12 34 4 24 4z" />
+                            <circle cx="24" cy="20" r="6" />
+                        </svg>
+                    </div>
+                    <h3>Aile Dostu</h3>
+                    <p>Mescidimiz ve bebek bakım alanımız ile ailenizle birlikte huzurlu vakit geçirebileceğiniz nezih
+                        bir mekan.</p>
+                </div>
+                <div class="about-card" data-aos="fade-up" data-delay="400">
+                    <div class="about-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 24c0-10 8-18 18-18s18 8 18 18-8 18-18 18S6 34 6 24z" />
+                            <path d="M24 14v10l7 7" />
+                        </svg>
+                    </div>
+                    <h3>Günlük Taze</h3>
+                    <p>Pastalarımız ve tatlılarımız her gün taze olarak hazırlanır. Tadı ve sunumuyla beklentilerinizin
+                        üzerinde.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Fotoğraflar</span>
+                <h2 class="section-title">Kafemizden Kareler</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Sıcak, nezih ve huzurlu atmosferimizi keşfedin</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <div class="gallery-img-container">
+                        <img src="images/dis-mekan-bahce.jpg" alt="Ahenk Kafe Bahçe ve Süs Havuzu" class="gallery-img"
+                            loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-badge">Açık Alan</span>
+                            <h3 class="gallery-title">Bahçe & Süs Havuzu</h3>
+                            <p class="gallery-desc">Sakin ve ferah dış mekan oturma alanı</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-img-container">
+                        <img src="images/ic-mekan-salon.jpg" alt="Ahenk Kafe İç Mekan Köşesi" class="gallery-img"
+                            loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-badge">İç Mekan</span>
+                            <h3 class="gallery-title">Nezih Salon & Özel Köşeler</h3>
+                            <p class="gallery-desc">Şık aydınlatmalar ve konforlu koltuklar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-img-container">
+                        <img src="images/gece-atmosferi.jpg" alt="Ahenk Kafe Gece Ambiyansı" class="gallery-img"
+                            loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-badge">Gece Ambiyansı</span>
+                            <h3 class="gallery-title">Akşam Işıkları</h3>
+                            <p class="gallery-desc">Sıcak ve huzurlu akşam atmosferi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-img-container">
+                        <img src="images/dis-cephe-bina.jpg" alt="Ahenk Kafe Dış Cephe" class="gallery-img"
+                            loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-badge">Dış Cephe</span>
+                            <h3 class="gallery-title">Serdivan Kadrajı</h3>
+                            <p class="gallery-desc">İstiklal Caddesi üzerindeki mekanımız</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Menümüz</span>
+                <h2 class="section-title">Lezzet Dünyamız</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Doğal · Taze · Lezzetli</p>
+            </div>
+
+            <!-- Menu Category Tabs -->
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-category="sicak-icecekler">
+                    <span class="tab-icon">☕</span>
+                    <span>Sıcak İçecekler</span>
+                </button>
+                <button class="menu-tab" data-category="sicak-kahveler">
+                    <span class="tab-icon">🫖</span>
+                    <span>Sıcak Kahveler</span>
+                </button>
+                <button class="menu-tab" data-category="soguk-kahveler">
+                    <span class="tab-icon">🧊</span>
+                    <span>Soğuk Kahveler</span>
+                </button>
+                <button class="menu-tab" data-category="soguk-icecekler">
+                    <span class="tab-icon">🥤</span>
+                    <span>Soğuk İçecekler</span>
+                </button>
+                <button class="menu-tab" data-category="tatlilar">
+                    <span class="tab-icon">🍰</span>
+                    <span>Tatlılar</span>
+                </button>
+                <button class="menu-tab" data-category="sandvicler">
+                    <span class="tab-icon">🥪</span>
+                    <span>Sandviçler</span>
+                </button>
+            </div>
+
+            <!-- Menu Content -->
+            <div class="menu-content" id="firebaseMenuContent">
+                <div id="menuLoader" style="text-align: center; padding: 40px; color: var(--clr-primary-400);">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="spin-anim"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg>
+                    <p style="margin-top: 15px; font-family: var(--font-heading);">Menü Yükleniyor...</p>
+                </div>
+                
+                <div class="menu-category active" id="sicak-icecekler"><div class="menu-grid"></div></div>
+                <div class="menu-category" id="sicak-kahveler"><div class="menu-grid"></div></div>
+                <div class="menu-category" id="soguk-kahveler"><div class="menu-grid"></div></div>
+                <div class="menu-category" id="soguk-icecekler"><div class="menu-grid"></div></div>
+                <div class="menu-category" id="tatlilar"><div class="menu-grid"></div></div>
+                <div class="menu-category" id="sandvicler"><div class="menu-grid"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Yorumlar</span>
+                <h2 class="section-title">Misafirlerimiz Ne Diyor?</h2>
+                <div class="section-line"></div>
+                <div class="review-summary">
+                    <div class="google-badge">
+                        <svg class="google-icon" viewBox="0 0 24 24" width="28" height="28">
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"
+                                fill="#4285F4" />
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853" />
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                fill="#FBBC05" />
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                fill="#EA4335" />
+                        </svg>
+                        <div class="google-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-text">5/5 · 27 yorum</span>
+                        </div>
+                    </div>
+                    <p class="review-notice">Yorumlar doğrulanmamıştır</p>
+                </div>
+            </div>
+
+            <div class="reviews-carousel">
+                <div class="reviews-track" id="reviewsTrack">
+                    <!-- Review 1 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">MF</div>
+                            <div class="reviewer-info">
+                                <h4>Mehmet Fatih ÖZTÜRK</h4>
+                                <span class="review-meta">Google yorumları · bir ay önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★★</span>
+                                <span>5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">Lezzetler çok güzel. Tatlıları harika. İlgi, alaka, temizlik, hizmet her
+                            şeyden çok memnun kaldım. Mescidi var. Bebek bakım yeri var. Herkese tavsiye ediyorum.</p>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">BK</div>
+                            <div class="reviewer-info">
+                                <h4>Bilge Kağan Ökten</h4>
+                                <span class="review-meta">Google yorumları · 3 hafta önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★★</span>
+                                <span>5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">Tatlılar ve içecekler çok lezzetli. Hizmetlerinden çok memnun kaldık.</p>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">EA</div>
+                            <div class="reviewer-info">
+                                <h4>Engin Atilla</h4>
+                                <span class="review-meta">Google yorumları · 6 gün önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★★</span>
+                                <span>5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">Çalışanları ve iç tasarımıyla nezih bir mekan. Menü çeşitliliği de
+                            yeterli.</p>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">MS</div>
+                            <div class="reviewer-info">
+                                <h4>Muhammet Selim Arık</h4>
+                                <span class="review-meta">Google yorumları · 6 gün önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★★</span>
+                                <span>5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">Her şey çok güzeldi. Ürünleri kaliteli. Serdivan'da ilk defa bu şekilde
+                            ilgili kafe sahibi görüyorum. Ailenizle gelebileceğiniz bir yer.</p>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">KE</div>
+                            <div class="reviewer-info">
+                                <h4>Kasım Ertaş</h4>
+                                <span class="review-meta">Google yorumları · 6 gün önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★★</span>
+                                <span>5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">Harika bir deneyimdi. Özellikle çayı çok taze ve lezzetliydi. Pastaları
+                            günlük ve gerçekten çok başarılıydı; hem sunumu hem de tadı beklentimin üzerindeydi.</p>
+                    </div>
+
+                    <!-- Review 6 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">MA</div>
+                            <div class="reviewer-info">
+                                <h4>Muhammet Ali Aslan</h4>
+                                <span class="review-meta">Google yorumları · 6 gün önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★★</span>
+                                <span>5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">Diyet kısıtlamaları: Şekersiz ürünler bulunuyor.</p>
+                    </div>
+
+                    <!-- Review 7 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">MY</div>
+                            <div class="reviewer-info">
+                                <h4>Muhammed Yusuf İbil</h4>
+                                <span class="review-meta">Google yorumları · 6 gün önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★★</span>
+                                <span>5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">Ailecek gidilebilecek nezih bir mekan.</p>
+                    </div>
+
+                    <!-- Review 8 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">ST</div>
+                            <div class="reviewer-info">
+                                <h4>Sinan TAŞ</h4>
+                                <span class="review-meta">Google yorumları · 6 gün önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★★</span>
+                                <span>5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">Üst düzey bir kahve deneyimi, rahatlatıcı bir atmosfer.</p>
+                    </div>
+
+                    <!-- Review 9 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">AŞ</div>
+                            <div class="reviewer-info">
+                                <h4>Ahmet Şanlı</h4>
+                                <span class="review-meta">Google yorumları · 6 gün önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★★</span>
+                                <span>5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">Tatlıları ve kahveleri efsane, birde ikramları :)</p>
+                    </div>
+
+                    <!-- Review 10 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">OY</div>
+                            <div class="reviewer-info">
+                                <h4>Okan Yıldız</h4>
+                                <span class="review-meta">Google yorumları · 6 gün önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★☆</span>
+                                <span>4/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">Mükemmel hizmet, güzel insanlar.</p>
+                    </div>
+
+                    <!-- Review 11 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">AK</div>
+                            <div class="reviewer-info">
+                                <h4>Ali İmran Köşker</h4>
+                                <span class="review-meta">Google yorumları · 6 gün önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★★</span>
+                                <span>5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">Çalışanlar güler yüzlüydü.</p>
+                    </div>
+
+                    <!-- Review 12 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">MM</div>
+                            <div class="reviewer-info">
+                                <h4>Melih Mercan</h4>
+                                <span class="review-meta">Google yorumları · 6 gün önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★★</span>
+                                <span>5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">Her şeyiyle mükemmel. Ortam nezih ve sakin.</p>
+                    </div>
+
+                    <!-- Review 13 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">FK</div>
+                            <div class="reviewer-info">
+                                <h4>Furkan K</h4>
+                                <span class="review-meta">Google yorumları · bir hafta önce</span>
+                            </div>
+                            <div class="review-rating">
+                                <span class="stars-small">★★★★★</span>
+                                <span>5/5</span>
+                            </div>
+                        </div>
+                        <p class="review-text">HARİKA, ortam çok nezih ve sakin. Kahvelerine bayıldım.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-btn carousel-prev" id="prevBtn" aria-label="Önceki yorum">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                    <button class="carousel-btn carousel-next" id="nextBtn" aria-label="Sonraki yorum">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">İletişim</span>
+                <h2 class="section-title">Bizi Ziyaret Edin</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Adres</h4>
+                            <p>İstiklal, 2. Cadde üzeri 50/A<br>54000 Serdivan/Sakarya</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Telefon</h4>
+                            <p><a href="tel:+905393599425">0539 359 94 25</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Çalışma Saatleri</h4>
+                            <p>Her gün: 10:00 - 23:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-features">
+                        <div class="feature-tag">
+                            <span>🕌</span> Mescit Mevcut
+                        </div>
+                        <div class="feature-tag">
+                            <span>👶</span> Bebek Bakım Odası
+                        </div>
+                        <div class="feature-tag">
+                            <span>👨‍👩‍👧‍👦</span> Aile Dostu
+                        </div>
+                        <div class="feature-tag">
+                            <span>🍰</span> Şekersiz Seçenekler
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.5414!2d30.362145!3d40.692235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ccb39a50f05b45%3A0x6cb6bc2faef398c5!2sahenk%20kafe!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicvey="no-referrer-when-downgrade" title="Ahenk Kafe Konum">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo-text">AHENK</span>
+                    <span class="footer-logo-sub">kafe</span>
+                    <p class="footer-tagline">Doğal · Taze · Lezzetli</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#hero">Ana Sayfa</a>
+                    <a href="#about">Hakkımızda</a>
+                    <a href="#gallery">Fotoğraflar</a>
+                    <a href="#menu">Menü</a>
+                    <a href="#reviews">Yorumlar</a>
+                    <a href="#contact">İletişim</a>
+                    <a href="admin.html" class="admin-link">Yönetici</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ahenk Kafe. Tüm hakları saklıdır.</p>
+                <p class="footer-address">İstiklal, 2. Cadde üzeri 50/A, 54000 Serdivan/Sakarya</p>
+            </div>
+            <div class="footer-credit">
+                <span>Ahmet Nurullah Erkan tarafından geliştirilmiştir</span>
+                <span class="credit-divider">•</span>
+                <a href="mailto:ahmetnurullaherkan@gmail.com" class="credit-email">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <path d="M22 6l-10 7L2 6" />
+                    </svg>
+                    İletişim: ahmetnurullaherkan@gmail.com
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageModal" class="image-modal">
+        <button class="modal-close" id="modalClose" aria-label="Kapat">&times;</button>
+        <div class="modal-box">
+            <img class="modal-content-img" id="modalImg" alt="Büyütülmüş Görsel">
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+
+    <!-- Firebase JS SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBojjcFFIOfzgzDZCMb5glxzJENtpYCkgg",
+            authDomain: "ahenkkafe-3938a.firebaseapp.com",
+            projectId: "ahenkkafe-3938a",
+            storageBucket: "ahenkkafe-3938a.firebasestorage.app",
+            messagingSenderId: "633075040495",
+            appId: "1:633075040495:web:08e9deec12a3502b62db1a",
+            measurementId: "G-7ZWXGMTTXT"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+
+    <script src="js/main.js?v=4"></script>
+</body>
+
+</html>
