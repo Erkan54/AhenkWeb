@@ -28,12 +28,64 @@
     <!-- Preloader -->
     <div id="preloader">
         <div class="preloader-inner">
-            <div class="leaf-spinner">
-                <svg viewBox="0 0 60 60" class="leaf-svg">
-                    <path d="M30 5 C20 15, 10 25, 10 35 C10 50, 20 55, 30 55 C40 55, 50 50, 50 35 C50 25, 40 15, 30 5Z"
-                        fill="none" stroke="currentColor" stroke-width="2" />
-                    <path d="M30 15 L30 45 M20 25 L30 35 M40 25 L30 35" fill="none" stroke="currentColor"
-                        stroke-width="1.5" />
+            <div class="coffee-loader-wrapper">
+                <svg viewBox="0 0 100 110" class="coffee-svg" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Fluid Coffee Gradient -->
+                        <linearGradient id="coffeeLiquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#8C5A35" />
+                            <stop offset="35%" stop-color="#5C3A21" />
+                            <stop offset="100%" stop-color="#2D170B" />
+                        </linearGradient>
+
+                        <!-- Crema Surface Gradient -->
+                        <linearGradient id="cremaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#CFA175" />
+                            <stop offset="50%" stop-color="#F3D9B1" />
+                            <stop offset="100%" stop-color="#C29468" />
+                        </linearGradient>
+
+                        <!-- Pouring Coffee Stream Gradient -->
+                        <linearGradient id="streamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#A86B3E" />
+                            <stop offset="50%" stop-color="#6E4023" />
+                            <stop offset="100%" stop-color="#4A2914" />
+                        </linearGradient>
+
+                        <!-- Oval Inner Cup Clip Path -->
+                        <clipPath id="cupInnerClip">
+                            <path d="M 25.5 40.5 Q 25.5 87.5 50 87.5 Q 74.5 87.5 74.5 40.5 Z" />
+                        </clipPath>
+                    </defs>
+
+                    <!-- Minimal Steam Rising above Cup -->
+                    <g class="steam-group">
+                        <path class="steam steam-1" d="M 40 34 C 36 24 44 18 39 8" fill="none" stroke="#CFA175" stroke-width="2" stroke-linecap="round" />
+                        <path class="steam steam-2" d="M 50 34 C 46 22 54 14 49 4" fill="none" stroke="#F3D9B1" stroke-width="2.5" stroke-linecap="round" />
+                        <path class="steam steam-3" d="M 60 34 C 56 24 64 18 59 8" fill="none" stroke="#CFA175" stroke-width="2" stroke-linecap="round" />
+                    </g>
+
+                    <!-- Coffee Pouring Stream from Above -->
+                    <g class="stream-container">
+                        <path class="coffee-stream" d="M 50 -5 L 50 78" stroke="url(#streamGrad)" stroke-width="4.5" stroke-linecap="round" />
+                        <path class="coffee-stream-glow" d="M 50 -5 L 50 78" stroke="#F3D9B1" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+                    </g>
+
+                    <!-- Minimal Handle -->
+                    <path d="M 74 48 C 86 48 86 74 71 78" fill="none" stroke="var(--clr-primary-600)" stroke-width="3.8" stroke-linecap="round" />
+
+                    <!-- Liquid Fill Inside Cup (Clipped to Oval) -->
+                    <g clip-path="url(#cupInnerClip)">
+                        <g class="coffee-liquid-group">
+                            <rect class="coffee-liquid-body" x="15" y="34" width="70" height="60" fill="url(#coffeeLiquidGrad)" />
+                            <ellipse class="coffee-surface" cx="50" cy="38" rx="24.5" ry="4" fill="url(#cremaGrad)" />
+                            <path class="coffee-foam-wave" d="M 15 35 Q 32 32 50 35 T 85 35 L 85 41 L 15 41 Z" fill="url(#cremaGrad)" />
+                        </g>
+                    </g>
+
+                    <!-- Oval Cup Body Silhouette & Rim -->
+                    <path d="M 25 40 Q 25 88 50 88 Q 75 88 75 40" fill="none" stroke="var(--clr-primary-600)" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round" />
+                    <ellipse cx="50" cy="40" rx="25" ry="4.5" fill="none" stroke="var(--clr-primary-600)" stroke-width="3.5" />
                 </svg>
             </div>
             <p class="preloader-text">Ahenk Kafe</p>

@@ -4,34 +4,49 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
-    // Preloader
+    // Preloader (Guaranteed 2-Second Coffee Fill Animation)
     // ==========================================
     const preloader = document.getElementById('preloader');
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-            document.body.style.overflow = '';
-        }, 800);
-    });
+    const preloaderStartTime = Date.now();
+    const MIN_PRELOADER_DURATION = 2000; // 2 saniye her türlü sürsün
 
-    // Fallback: hide preloader after 3 seconds
+    function finishPreloader() {
+        if (!preloader || preloader.classList.contains('hidden') || preloader.dataset.closing) return;
+        preloader.dataset.closing = 'true';
+
+        const elapsedTime = Date.now() - preloaderStartTime;
+        // Early fade-out starts at 1.1s (1100ms)
+        const fadeStartTime = Math.max(0, 1100 - elapsedTime);
+
+        setTimeout(() => {
+            // Trigger 0.9s fade-out & mini upward lift animation
+            preloader.classList.add('closing');
+
+            // Complete unmount after 0.9s (total 2.0 seconds)
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 900);
+        }, fadeStartTime);
+    }
+
+    window.addEventListener('load', finishPreloader);
+
+    // Fallback: guarantee preloader closes after minimum time + fallback buffer if load is delayed
     setTimeout(() => {
-        if (preloader && !preloader.classList.contains('hidden')) {
-            preloader.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-    }, 3000);
+        finishPreloader();
+    }, 4000);
 
     // ==========================================
     // Navbar Scroll Effect
     // ==========================================
     const navbar = document.getElementById('navbar');
     const backToTop = document.getElementById('backToTop');
-    
+
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-        
+
         // Navbar background
         if (currentScroll > 80) {
             navbar.classList.add('scrolled');
@@ -79,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Active Nav Link on Scroll
     // ==========================================
     const sections = document.querySelectorAll('section[id]');
-    
+
     const observerOptions = {
         root: null,
         rootMargin: '-30% 0px -70% 0px',
@@ -140,25 +155,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (typeof firebase !== 'undefined' && firebase.firestore) {
         const db = firebase.firestore();
-        
+
         db.collection('menu').where('active', '==', true).onSnapshot((snapshot) => {
-            if(menuLoader) menuLoader.classList.add('hidden');
-            
+            if (menuLoader) menuLoader.classList.add('hidden');
+
             const items = [];
             snapshot.forEach(doc => {
                 items.push({ id: doc.id, ...doc.data() });
             });
-            
+
             // Sort items in memory
             items.sort((a, b) => {
                 const timeA = a.createdAt ? a.createdAt.toMillis() : 0;
                 const timeB = b.createdAt ? b.createdAt.toMillis() : 0;
                 return timeA - timeB;
             });
-            
+
             // Clear grids
             Object.values(menuGrids).forEach(grid => {
-                if(grid) grid.innerHTML = '';
+                if (grid) grid.innerHTML = '';
             });
 
             // Populate grids
@@ -167,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const menuItem = document.createElement('div');
                     menuItem.className = 'menu-item';
                     const descHTML = item.description ? `<br><small style="color:var(--clr-text-light);font-size:0.8em">${item.description}</small>` : '';
-                    
+
                     menuItem.innerHTML = `
                         <span class="item-name">${item.name}${descHTML}</span>
                         <span class="item-dots"></span>
@@ -178,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, (err) => {
             console.error('Menü yüklenirken hata oluştu:', err);
-            if(menuLoader) {
+            if (menuLoader) {
                 menuLoader.classList.remove('hidden');
                 menuLoader.innerHTML = '<p>Menü yüklenemedi. Lütfen sayfayı yenileyin.</p>';
             }
@@ -193,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('nextBtn');
     const carouselDotsContainer = document.getElementById('carouselDots');
     const reviewCards = document.querySelectorAll('.review-card');
-    
+
     let currentSlide = 0;
     let cardsPerView = getCardsPerView();
     let totalPages = Math.ceil(reviewCards.length / cardsPerView);
@@ -232,10 +247,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Fallback in case they are stacked or overlapping
             if (gap <= 0) gap = parseInt(getComputedStyle(reviewsTrack).gap) || 16;
         }
-        
+
         let stepMultiplier = (window.innerWidth <= 768) ? 1 : cardsPerView;
         let offset = currentSlide * (cardWidth + gap) * stepMultiplier;
-        
+
         // Calculate maximum allowed scroll offset to prevent blank empty slides
         const maxOffset = Math.max(0, (reviewCards.length - cardsPerView) * (cardWidth + gap));
         if (offset > maxOffset) {
@@ -243,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         reviewsTrack.style.transform = `translateX(-${offset}px)`;
-        
+
         // Update dots
         const dots = carouselDotsContainer.querySelectorAll('.carousel-dot');
         dots.forEach((dot, i) => {
@@ -412,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll for anchor links
     // ==========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -461,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const elapsed = Date.now() - startTime;
                 const progress = Math.min(elapsed / duration, 1);
                 const eased = 1 - Math.pow(1 - progress, 3);
-                
+
                 let current = eased * num;
                 if (isDecimal) {
                     stat.textContent = current.toFixed(1) + (hasSuffix ? '+' : '');
@@ -494,7 +509,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = card.querySelector('.gallery-img');
             const title = card.querySelector('.gallery-title')?.textContent || '';
             const desc = card.querySelector('.gallery-desc')?.textContent || '';
-            
+
             if (img && imageModal) {
                 modalImg.src = img.src;
                 modalCaption.textContent = title + (desc ? ` — ${desc}` : '');
