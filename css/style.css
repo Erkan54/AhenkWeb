@@ -110,6 +110,60 @@ body {
     overflow-x: hidden;
 }
 
+/* ==========================================
+   Section Decorative Illustrations
+   ========================================== */
+.section-deco {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.deco-right {
+    right: -30px;
+    top: 20px;
+    width: 220px;
+    height: auto;
+}
+
+.deco-left {
+    left: -30px;
+    top: 30px;
+    width: 200px;
+    height: auto;
+}
+
+.deco-left-bottom {
+    left: -30px;
+    bottom: -10px;
+    width: 210px;
+    height: auto;
+}
+
+.deco-right-bottom {
+    right: -20px;
+    bottom: -10px;
+    width: 210px;
+    height: auto;
+}
+
+/* Ensure sections clip their decorations */
+.about-section,
+.gallery-section,
+.menu-section,
+.contact-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hide decorations on smaller screens */
+@media (max-width: 768px) {
+    .section-deco {
+        display: none;
+    }
+}
+
+
 .hidden {
     display: none !important;
 }
@@ -199,12 +253,44 @@ button {
     height: 115px;
     margin-bottom: var(--space-md);
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coffee-loader-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(140, 90, 53, 0.22) 0%, rgba(92, 58, 33, 0.10) 50%, rgba(0, 0, 0, 0) 75%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(16px);
+    animation: coffeeGlowPulse 3s ease-in-out infinite alternate;
 }
 
 .coffee-svg {
     width: 100%;
     height: 100%;
     overflow: visible;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes coffeeGlowPulse {
+    0% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
 }
 
 /* 1. Pouring Coffee Stream (From Top) */
@@ -844,6 +930,8 @@ button {
     max-width: 1200px;
     margin: 0 auto;
     padding: var(--space-4xl) var(--space-xl);
+    position: relative;
+    z-index: 1;
 }
 
 .section-header {
