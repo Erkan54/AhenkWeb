@@ -253,58 +253,12 @@ button {
     height: 115px;
     margin-bottom: var(--space-md);
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.coffee-loader-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(175, 110, 60, 0.50) 0%, rgba(120, 70, 35, 0.22) 48%, rgba(0, 0, 0, 0) 80%);
-    border-radius: 50%;
-    z-index: 0;
-    pointer-events: none;
-    filter: blur(40px);
-    opacity: 0.7;
-    animation: coffeeGlowFill 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards,
-               coffeeGlowPulse 2.5s ease-in-out 2s infinite alternate;
 }
 
 .coffee-svg {
     width: 100%;
     height: 100%;
     overflow: visible;
-    position: relative;
-    z-index: 1;
-}
-
-/* Sync glow growth with coffee liquid fill level (0.35 -> 0.50) */
-@keyframes coffeeGlowFill {
-    0% {
-        opacity: 0.7; /* 0.50 * 0.7 = 0.35 başlangıç ışığı */
-        transform: translate(-50%, -50%) scale(0.88);
-    }
-    100% {
-        opacity: 1; /* 0.50 maksimum ışık */
-        transform: translate(-50%, -50%) scale(1.0);
-    }
-}
-
-@keyframes coffeeGlowPulse {
-    0% {
-        opacity: 0.92;
-        transform: translate(-50%, -50%) scale(0.97);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.05);
-    }
 }
 
 /* 1. Pouring Coffee Stream (From Top) */
