@@ -264,14 +264,16 @@ button {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 230px;
-    height: 230px;
-    background: radial-gradient(circle, rgba(175, 110, 60, 0.36) 0%, rgba(120, 70, 35, 0.18) 50%, rgba(0, 0, 0, 0) 80%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(175, 110, 60, 0.50) 0%, rgba(120, 70, 35, 0.22) 48%, rgba(0, 0, 0, 0) 80%);
     border-radius: 50%;
     z-index: 0;
     pointer-events: none;
-    filter: blur(20px);
-    animation: coffeeGlowPulse 3s ease-in-out infinite alternate;
+    filter: blur(28px);
+    opacity: 0.7;
+    animation: coffeeGlowFill 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards,
+               coffeeGlowPulse 2.5s ease-in-out 2s infinite alternate;
 }
 
 .coffee-svg {
@@ -282,14 +284,26 @@ button {
     z-index: 1;
 }
 
+/* Sync glow growth with coffee liquid fill level (0.35 -> 0.50) */
+@keyframes coffeeGlowFill {
+    0% {
+        opacity: 0.7; /* 0.50 * 0.7 = 0.35 başlangıç ışığı */
+        transform: translate(-50%, -50%) scale(0.88);
+    }
+    100% {
+        opacity: 1; /* 0.50 maksimum ışık */
+        transform: translate(-50%, -50%) scale(1.0);
+    }
+}
+
 @keyframes coffeeGlowPulse {
     0% {
-        opacity: 0.75;
-        transform: translate(-50%, -50%) scale(0.94);
+        opacity: 0.92;
+        transform: translate(-50%, -50%) scale(0.97);
     }
     100% {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1.06);
+        transform: translate(-50%, -50%) scale(1.05);
     }
 }
 
