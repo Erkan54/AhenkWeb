@@ -264,14 +264,14 @@ button {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 170px;
-    height: 170px;
-    background: radial-gradient(circle, rgba(180, 115, 65, 0.55) 0%, rgba(130, 75, 38, 0.28) 45%, rgba(0, 0, 0, 0) 75%);
+    width: 230px;
+    height: 230px;
+    background: radial-gradient(circle, rgba(175, 110, 60, 0.36) 0%, rgba(120, 70, 35, 0.18) 50%, rgba(0, 0, 0, 0) 80%);
     border-radius: 50%;
     z-index: 0;
     pointer-events: none;
-    filter: blur(14px);
-    animation: coffeeGlowPulse 2.5s ease-in-out infinite alternate;
+    filter: blur(20px);
+    animation: coffeeGlowPulse 3s ease-in-out infinite alternate;
 }
 
 .coffee-svg {
@@ -284,12 +284,12 @@ button {
 
 @keyframes coffeeGlowPulse {
     0% {
-        opacity: 0.8;
-        transform: translate(-50%, -50%) scale(0.95);
+        opacity: 0.75;
+        transform: translate(-50%, -50%) scale(0.94);
     }
     100% {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1.08);
+        transform: translate(-50%, -50%) scale(1.06);
     }
 }
 
